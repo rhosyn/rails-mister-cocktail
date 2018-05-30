@@ -1,41 +1,43 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
-  <div class="banner-content">
-    <p></p>
-  </div>
-</div>
-<div class="container" id="show-flats">
 
+<div class="container">
   <div class="row">
-    <div class="col-8">
-      <div class="white-card">
-        <h2> <%= @cocktail.name  %> </h2>
-      </div>
-      <div class="white-card">
-        <h4><strong><%= "A superbly delicious cocktail..."  %></strong></h4>
+    <div class="col-sm-8">
+      <div class="card-detailed" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @cocktail.image %>);">
+        <div class="card-description">
+          <h3><%= @cocktail.name %></h3>
+        </div>
+
       </div>
     </div>
-    <div class="col-4">
-      <div class="white-card">
-        <p>Ingredients</p>
-      </div>
-      <div class="white-card">
-        <div class="footer-links">
-          <% @cocktail.doses.each do |d| %>
-          <%= d.description %>
-          <%= d.ingredient.name %>
-          <% end %>
+    <div class="card-info">
+      <div class="col-sm-4">
+        <div>
+
         </div>
-      </div>
-      <div class="white-card">
-        <p>text here</p>
+        <div>
+         <ul>
+          <li><h4>Ingredients:</h4></li>
+          <% @cocktail.doses.each do |d| %>
+            <li><%= d.description %>
+              <%= d.ingredient.name %>
+            <%= link_to remove_path(d), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
+              <i class="fas fa-trash-alt"></i><% end %>
+           <% end %></li>
+          <hr />
+           <li><%= link_to 'Add new ingredient', new_cocktail_dose_path(@cocktail) %></li>
+          <li><%= link_to 'Back to cocktails overview', cocktails_path %></li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </div>
 
-<%= link_to 'Back to cocktails overview', cocktails_path %>
-<hr />
-<%= link_to 'Add new ingredient', new_cocktail_dose_path(@cocktail) %>
 </div>
+
+
+
+
 
 
 
