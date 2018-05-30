@@ -1,0 +1,11 @@
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <div class="form-inputs">
+    <%= f.association :ingredient, collection: Ingredient.order(:name), prompt: "Choose an ingredient" %>
+    <%= f.input :description, placeholder: "Choose the dosage e.g. 2 shots" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "add my ingredient", class: "btn btn-primary" %>
+  </div>
+<% end %>
+

@@ -1,0 +1,42 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+  <div class="banner-content">
+    <p></p>
+  </div>
+</div>
+<div class="container" id="show-flats">
+
+  <div class="row">
+    <div class="col-8">
+      <div class="white-card">
+        <h2> <%= @cocktail.name  %> </h2>
+      </div>
+      <div class="white-card">
+        <h4><strong><%= "A superbly delicious cocktail..."  %></strong></h4>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="white-card">
+        <p>Ingredients</p>
+      </div>
+      <div class="white-card">
+        <div class="footer-links">
+          <% @cocktail.doses.each do |d| %>
+          <%= d.description %>
+          <%= d.ingredient.name %>
+          <% end %>
+        </div>
+      </div>
+      <div class="white-card">
+        <p>text here</p>
+      </div>
+    </div>
+  </div>
+
+<%= link_to 'Back to cocktails overview', cocktails_path %>
+<hr />
+<%= link_to 'Add new ingredient', new_cocktail_dose_path(@cocktail) %>
+</div>
+
+
+
+
