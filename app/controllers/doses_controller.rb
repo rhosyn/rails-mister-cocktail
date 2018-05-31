@@ -19,12 +19,13 @@ class DosesController < ApplicationController
   def destroy
     @dose = Dose.find(params[:id])
     @dose.destroy
-    redirect_to cocktails_path
+    redirect_to cocktails_path, notice: "Ingredient successfully removed"
   end
 
   private
   def dose_params
     params.require(:dose).permit(:description)
+    # params.require(:dose[:ingredient_id])
   end
 
 end

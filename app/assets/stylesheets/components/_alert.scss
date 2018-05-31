@@ -5,11 +5,19 @@
 .alert {
   margin: 0;
   text-align: center;
-  color: white;
+  color: #ff000096;
+  border: none;
+  background: $gray;
 }
 .alert-info {
   background: $green;
 }
-.alert-warning {
-  background: $red;
+.alert-danger {
+  background: $gray;
 }
+
+.invalid-feedback {
+  color: #ff000096;
+}
+
+
