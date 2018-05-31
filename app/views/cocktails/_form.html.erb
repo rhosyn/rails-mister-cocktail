@@ -8,9 +8,9 @@
   </div>
   <label class="btn btn btn-default btn-sm btn-top">
   Upload an image
+    <%= f.input :photo_cache, as: :hidden %>
   <span style="display:none;">
     <%= f.input :photo, class: "submit-photo" %>
-    <%= f.input :photo_cache, as: :hidden %>
   </span>
 </label>
 
