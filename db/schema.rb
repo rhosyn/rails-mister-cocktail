@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2018_05_31_095939) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "image"
     t.text "image_url"
   end
 
