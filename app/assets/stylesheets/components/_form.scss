@@ -21,11 +21,13 @@
 }
 
 .cocktail_photo label {
-      font-family: Raleway;
+    font-family: Raleway;
     font-weight: normal;
     color: #ffffffbd;
 }
 
-.form-control-file {
-
+#cocktail_photo {
+      display: flex;
+    align-items: center;
+    color: #ff000096;
 }
