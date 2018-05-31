@@ -1,6 +1,7 @@
 <div class="container"><%= simple_form_for [@cocktail, @dose] do |f| %>
 
   <div class="form-group">
+    <%= f.association :ingredient, collection: Ingredient.order(:name), include_blank: false  %>
     <%= f.input :description, placeholder: "Choose the dosage e.g. 2 shots" %>
   </div>
 
