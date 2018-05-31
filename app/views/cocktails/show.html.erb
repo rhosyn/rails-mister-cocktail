@@ -18,14 +18,17 @@
          <ul>
           <li><h4>Ingredients:</h4></li>
           <% @cocktail.doses.each do |d| %>
-            <li><%= d.description %>
-              <%= d.ingredient.name %>
+          <li><%= d.description %>
+            <%= d.ingredient.name %>
             <%= link_to remove_path(d), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %>
-              <i class="fas fa-trash-alt"></i><% end %>
-           <% end %></li>
-          <hr />
-           <li><%= link_to 'Add new ingredient', new_cocktail_dose_path(@cocktail) %></li>
-          <li><%= link_to 'Back to cocktails overview', cocktails_path %></li>
+            <i class="fas fa-trash-alt"></i><% end %>
+            <% end %></li>
+            <hr />
+            <li><%= link_to 'Add new ingredient', new_cocktail_dose_path(@cocktail) %></li>
+            <%= link_to "Delete this cocktail", delete_cocktail_path(@cocktail),
+            method: :delete,
+            data: { confirm: "Delete this delightful beverage?" } %>
+            <li><%= link_to 'Back to cocktails overview', cocktails_path %></li>
           </ul>
         </div>
 
