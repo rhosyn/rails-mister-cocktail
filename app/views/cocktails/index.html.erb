@@ -4,7 +4,7 @@
 
       <%= link_to cocktail_path(c), :action => 'go' do %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path c.photo, height: 300, width: 400, crop: :fill %>');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path c.photo, height: 800, width: 600, crop: :fill %>');">
           <div class="card-category"><%= c.name %></div>
           <div class="card-description">
           <h3><%= c.name %></h3>
