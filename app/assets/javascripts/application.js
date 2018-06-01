@@ -16,4 +16,5 @@
 // require jquery
 // require jquery_ujs
 // require bootstrap-sprockets
+// require sweetalert2
 // require_tree .
